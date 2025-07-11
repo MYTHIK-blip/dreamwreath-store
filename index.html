@@ -2,52 +2,222 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DREAMWREATH — Powered by MYTHIK-blip</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>🔬 Dreamwreath Lab — Scroll Synthesis Portal</title>
   <style>
+    :root {
+      --bg: #0d001a;
+      --fg: #e0e0e0;
+      --accent1: #7fffd4;
+      --accent2: #ffae00;
+      --mono: 'Courier New', monospace;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background-color: #0e001a;
-      color: #e0e0e0;
-      font-family: monospace;
-      padding: 3rem;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--mono);
+      line-height: 1.4;
+      padding: 1rem;
     }
-    h1 {
-      font-size: 2rem;
-      color: #ffc107;
+    header, nav, main, footer {
+      max-width: 960px;
+      margin: auto;
     }
-    a {
-      color: #00e0ff;
+    header {
+      padding: 2rem 0;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      color: var(--accent2);
+    }
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.8;
+      margin-top: 0.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin: 1.5rem 0;
+    }
+    nav a {
+      color: var(--accent1);
       text-decoration: none;
+      font-weight: bold;
     }
-    .scrollkits {
-      margin-top: 2rem;
+    section {
+      margin: 2rem 0;
+      padding: 1rem;
+      border: 1px solid #330044;
+      border-radius: 8px;
     }
-    .scrollkits li {
+    section h2 {
       margin-bottom: 1rem;
+      color: var(--accent1);
+      font-size: 1.8rem;
+    }
+    .kits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+    .kit-card {
+      background: #1a002f;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+    .kit-card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--accent2);
+    }
+    .kit-card p {
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+    .kit-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.4rem 0.8rem;
+      background: var(--accent1);
+      color: var(--bg);
+      border-radius: 4px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    table th, table td {
+      border: 1px solid #330044;
+      padding: 0.5rem;
+    }
+    table th {
+      background: #2a003f;
+      color: var(--accent1);
     }
     footer {
-      margin-top: 4rem;
-      font-size: 0.9rem;
+      text-align: center;
+      margin: 3rem 0 1rem;
+      font-size: 0.8rem;
       opacity: 0.6;
     }
   </style>
 </head>
 <body>
-  <h1>🌀 DREAMWREATH</h1>
-  <p><strong>Digital kits for clarity, velocity, and sovereignty.</strong></p>
-  <p>Powered by <code>MYTHIK-blip</code> — no subscriptions, no noise, just agent-ready downloads.</p>
 
-  <div class="scrollkits">
-    <h2>📦 Featured Scrollkits</h2>
-    <ul>
-      <li>🧠 <a href="https://gumroad.com/l/clarity001" target="_blank">CLARITY_001 – Mental Fog Removal</a></li>
-      <li>⚙️ <a href="https://gumroad.com/l/devstack001" target="_blank">DEVSTACK_001 – Indie Hacker Tools</a></li>
-      <li>🌍 <a href="https://gumroad.com/l/resilience001" target="_blank">RESILIENCE_001 – Crisis Stack</a></li>
-    </ul>
-  </div>
+<header>
+  <h1>🔬 Dreamwreath Lab</h1>
+  <p>Scrollkit synthesis, testing, and deployment — powered by MYTHIK-blip</p>
+</header>
 
-  <footer>
-    © 2025 MYTHIK-blip / Scrollwise crafted. Ritual-secure. Agent-aligned.
-  </footer>
+<nav>
+  <a href="#overview">Overview</a>
+  <a href="#method">Methodology</a>
+  <a href="#catalog">Scrollkit Catalog</a>
+  <a href="#notebook">Lab Notebook</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+
+  <section id="overview">
+    <h2>🧬 Overview</h2>
+    <p>
+      Dreamwreath Lab is the central portal for **designing**, **validating**, and **deploying** scrollkits across multiple vectors of society. Each kit is a rigorously tested ZIP package—agent-ready, ritual-secure, and subscription-free.
+    </p>
+  </section>
+
+  <section id="method">
+    <h2>⚙️ Methodology</h2>
+    <ol>
+      <li><strong>Concept Design:</strong> Define vector, theme, and core objectives.</li>
+      <li><strong>Kit Assembly:</strong> Compile scripts, templates, and rituals into a structured ZIP.</li>
+      <li><strong>Validation:</strong> Automated smoke tests via VORPALIS and local Mistral LLM checks.</li>
+      <li><strong>Deployment:</strong> GitHub ↔ Cloudflare Pages integration & Gumroad sync.</li>
+    </ol>
+  </section>
+
+  <section id="catalog">
+    <h2>📦 Scrollkit Catalog</h2>
+    <div class="kits-grid">
+      <div class="kit-card">
+        <h3>CLARITY_001</h3>
+        <p><em>Mental Fog Removal Suite</em></p>
+        <p>10 guided prompts, reflection templates, and paradox triggers.</p>
+        <a href="https://gumroad.com/l/clarity001" target="_blank">Download ZIP</a>
+      </div>
+      <div class="kit-card">
+        <h3>DEVSTACK_001</h3>
+        <p><em>Indie Hacker Toolchain</em></p>
+        <p>Docker Compose YAML, VSCode snippets, AutoGen scaffolds.</p>
+        <a href="https://gumroad.com/l/devstack001" target="_blank">Download ZIP</a>
+      </div>
+      <div class="kit-card">
+        <h3>RESILIENCE_001</h3>
+        <p><em>Crisis Response Stack</em></p>
+        <p>Offline-first tools, portable databases, and fallback rituals.</p>
+        <a href="https://gumroad.com/l/resilience001" target="_blank">Download ZIP</a>
+      </div>
+      <!-- add more kit-cards as needed -->
+    </div>
+  </section>
+
+  <section id="notebook">
+    <h2>📓 Lab Notebook</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Kit ID</th>
+          <th>Version</th>
+          <th>Status</th>
+          <th>Last Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CLARITY_001</td>
+          <td>v1.2.0</td>
+          <td>Validated</td>
+          <td>2025-07-10</td>
+        </tr>
+        <tr>
+          <td>DEVSTACK_001</td>
+          <td>v0.9.5</td>
+          <td>In Testing</td>
+          <td>2025-07-11</td>
+        </tr>
+        <tr>
+          <td>RESILIENCE_001</td>
+          <td>v1.0.0</td>
+          <td>Released</td>
+          <td>2025-07-09</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="contact">
+    <h2>✉️ Contact & Community</h2>
+    <p>
+      Questions, collaboration invites, or ritual integration requests?<br/>
+      Reach out: <a href="mailto:kerehama.mcleod@outlook.com">kerehama.mcleod@outlook.com</a>
+    </p>
+    <p>
+      Follow the lab on GitHub:  
+      <a href="https://github.com/MYTHIK-blip/dreamwreath-store" target="_blank">github.com/MYTHIK-blip/dreamwreath-store</a>
+    </p>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2025 MYTHIK-blip — All Scrollfront content licensed MIT</p>
+</footer>
+
 </body>
 </html>
