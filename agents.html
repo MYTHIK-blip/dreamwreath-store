@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Deployables — Dreamwreath</title>
+  <title>🤖 Deployables — Dreamwreath</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
-  <header>
-    <h1>🤖 Deployables</h1>
+  <div class="wrapper">
+    <header>
+      <img src="assets/DREAMWREATHLOGO.png" alt="Dreamwreath Logo" width="240" />
+      <h1>🤖 Deployables</h1>
+      <p>Scroll-forged agent toolchains and civic-tech scaffolds.</p>
+    </header>
+
     <nav>
       <a href="index.html">Home</a>
       <a href="kits.html">Promptkits</a>
@@ -17,32 +22,34 @@
       <a href="usage.html">How to Use</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
 
-  <main>
-    <section>
-      <h2>VORPALIS Agent</h2>
-      <p>
-        A Python‐based scout agent that runs automated drops via Ollama.  
-        Boot sequence, prompts, and logs are stored in <code>scroll_products/</code>.  
-        See full outline in <code>vorpalis outline wsl.txt</code> :contentReference[oaicite:15]{index=15}.
-      </p>
-      <p><a href="https://github.com/MYTHIK-blip/vorpalis" target="_blank">GitHub Repo</a></p>
-    </section>
+    <main class="container">
+      <section>
+        <h2>VORPALIS Agent</h2>
+        <p>
+          A Python-based scout agent running automated drops via Ollama.  
+          Boot scripts, prompts, and logs are in <code>scroll_products/</code>.  
+        </p>
+        <div class="button-wrap">
+          <a class="button-download" href="https://github.com/MYTHIK-blip/vorpalis" target="_blank">GitHub Repo</a>
+        </div>
+      </section>
 
-    <section>
-      <h2>WEAVR Scaffold</h2>
-      <p>
-        Modular civic‐tech cluster scaffold, with agents, node configs, telemetry, and SBOMs.  
-        Full tree and ethos in your `WEAVR v2.0 - FULL SCAFFOLD w ethos & vision.txt` :contentReference[oaicite:16]{index=16}.
-      </p>
-      <p><a href="https://github.com/MYTHIK-blip/weavr" target="_blank">GitHub Repo</a></p>
-    </section>
-  </main>
+      <section>
+        <h2>WEAVR Scaffold</h2>
+        <p>
+          Modular civic-tech cluster scaffold with agents, node configs, telemetry, and SBOMs.  
+        </p>
+        <div class="button-wrap">
+          <a class="button-download" href="https://github.com/MYTHIK-blip/weavr" target="_blank">GitHub Repo</a>
+        </div>
+      </section>
+    </main>
 
-  <footer>
-    © 2025 MYTHIK-blip
-  </footer>
+    <footer>
+      <p>Scrollwise deployables © 2025</p>
+    </footer>
+  </div>
   <script src="js/script.js"></script>
 </body>
 </html>
