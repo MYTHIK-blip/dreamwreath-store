@@ -1,87 +1,243 @@
+/* =========================================
+   DREAMWREATH MINECRAFT-GRADE STYLE
+   ========================================= */
+
+/* Import pixel font */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
+/* ————————————————————————————————————
+   RESET & PIXEL RENDERING
+   ———————————————————————————————————— */
 * {
+  margin: 0; padding: 0;
   box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
 }
 
+/* ————————————————————————————————————
+   COLOR PALETTE
+   ———————————————————————————————————— */
+:root {
+  --sky-top: #87ceeb;          /* light sky blue */
+  --sky-bottom: #1e3d59;       /* deep twilight blue */
+  --grass: #55a630;            /* grassy green */
+  --dirt: #8b4513;             /* dirt brown */
+  --stone: #7d7d7d;            /* stone grey */
+  --accent: #4caf50;           /* emerald accent */
+  --highlight: #ffeb3b;        /* golden highlight */
+  --bg-block: #121212;         /* block background */
+  --fg: #c2ffb0;               /* off-white text */
+  --nav-bg: #1a002f;           /* dark panel */
+  --grid-line: #00ff88;        /* neon grid */
+  --danger: #f44336;           /* red alert */
+  --shadow: #000000;           /* pure black */
+}
+
+/* ————————————————————————————————————
+   BODY & BACKGROUND
+   ———————————————————————————————————— */
 html, body {
-  background-color: #0f001d;
-  color: #66ff66;
+  height: 100%; width: 100%;
   font-family: 'Press Start 2P', monospace;
   font-size: 12px;
   line-height: 1.4;
+  color: var(--fg);
+  background:
+    /* Pixel sky stripes */
+    repeating-linear-gradient(
+      0deg,
+      var(--sky-top) 0px, var(--sky-top) 16px,
+      rgba(0,0,0,0.05) 16px, rgba(0,0,0,0.05) 18px
+    ),
+    /* Sky gradient */
+    linear-gradient(to bottom, var(--sky-top) 0%, var(--sky-bottom) 60%, var(--dirt) 60%, var(--dirt) 70%, var(--grass) 70%, var(--stone) 100%);
+  background-size: auto, auto;
   image-rendering: pixelated;
-  text-shadow: 0 0 2px #33ff33;
+  text-shadow: 1px 1px var(--shadow);
   min-height: 100vh;
 }
 
-a {
-  color: #ff66cc;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: underline;
+/* ————————————————————————————————————
+   GRID LAYOUT WRAPPER
+   ———————————————————————————————————— */
+.wrapper {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "nav"
+    "main"
+    "footer";
+  grid-template-rows: auto auto 1fr auto;
+  grid-template-columns: 1fr;
+  min-height: 100vh;
 }
 
-header, footer, main, nav, section {
-  padding: 1rem;
-}
-
+/* ————————————————————————————————————
+   HEADER
+   ———————————————————————————————————— */
 header {
+  grid-area: header;
   text-align: center;
-  border-bottom: 2px solid #66ff66;
+  padding: 2rem 1rem 1rem;
+  background: rgba(26,0,47,0.8);
+  border-bottom: 4px solid var(--accent);
+}
+header img {
+  image-rendering: pixelated;
+  margin-bottom: 1rem;
 }
 header h1 {
-  color: #ffae00;
-  font-size: 1.5rem;
+  color: var(--highlight);
+  font-size: 1.8rem;
+  text-shadow: 2px 2px var(--shadow);
 }
-nav {
+header p {
+  color: var(--accent);
+  font-size: 0.75rem;
   margin-top: 0.5rem;
 }
-nav a {
-  margin: 0 0.4rem;
-}
 
-.cards, .kits-grid {
+/* ————————————————————————————————————
+   NAVIGATION
+   ———————————————————————————————————— */
+nav {
+  grid-area: nav;
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
   justify-content: center;
+  gap: 0.6rem;
+  padding: 0.8rem 1rem;
+  background: var(--nav-bg);
+  border-bottom: 3px solid var(--grid-line);
+}
+nav a {
+  display: inline-block;
+  background: var(--bg-block);
+  color: var(--fg);
+  padding: 0.5rem 0.8rem;
+  border: 2px solid var(--accent);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  transition: all 0.15s ease-in-out;
+}
+nav a.active {
+  background: var(--grass);
+  color: #000;
+  border-color: var(--highlight);
+}
+nav a:hover {
+  background: var(--highlight);
+  color: #000;
+  border-color: var(--grass);
+}
+
+/* ————————————————————————————————————
+   MAIN & CONTAINER
+   ———————————————————————————————————— */
+main {
+  grid-area: main;
+  padding: 2rem 1rem;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* ————————————————————————————————————
+   SECTIONS
+   ———————————————————————————————————— */
+section {
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: rgba(26,0,47,0.6);
+  border: 2px dashed var(--grid-line);
+  border-radius: 4px;
+}
+section h2, section h3 {
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+/* ————————————————————————————————————
+   CARDS GRID
+   ———————————————————————————————————— */
+.cards, .kits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
   margin-top: 1rem;
 }
 
+/* ————————————————————————————————————
+   CARDS / KIT-CARDS
+   ———————————————————————————————————— */
 .card, .kit-card {
-  background: #1a002f;
-  border: 2px solid #66ff66;
+  background: var(--bg-block);
   padding: 1rem;
-  min-width: 160px;
+  border: 3px solid var(--accent);
+  box-shadow: inset 0 0 0 1px var(--shadow);
   text-align: center;
+  transition: transform 0.1s ease-in-out, border-color 0.1s;
 }
 .card:hover, .kit-card:hover {
-  background: #24003c;
+  transform: translateY(-2px);
+  border-color: var(--highlight);
 }
 
-h2, h3 {
-  color: #7fffd4;
-  margin-bottom: 0.5rem;
-}
-
-.button-download {
+/* ————————————————————————————————————
+   DOWNLOAD BUTTONS
+   ———————————————————————————————————— */
+a.button-download {
   display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-  background: #00e0ff;
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  background: var(--grass);
   color: #000;
-  text-transform: uppercase;
-  border: 2px solid #00e0ff;
+  border: 2px solid var(--accent);
   font-size: 0.75rem;
+  text-transform: uppercase;
+  transition: background 0.15s, color 0.15s;
+}
+a.button-download:hover {
+  background: var(--highlight);
+  color: #000;
+  box-shadow: 0 0 4px var(--accent);
 }
 
+/* ————————————————————————————————————
+   FOOTER
+   ———————————————————————————————————— */
 footer {
+  grid-area: footer;
   text-align: center;
-  margin-top: 2rem;
-  border-top: 2px solid #66ff66;
-  opacity: 0.6;
+  padding: 1rem;
+  background: rgba(26,0,47,0.8);
+  border-top: 3px solid var(--grid-line);
+  font-size: 0.75rem;
+  opacity: 0.8;
+}
+
+/* ————————————————————————————————————
+   UTILITY CLASSES
+   ———————————————————————————————————— */
+.container {
+  max-width: 960px;
+  margin: auto;
+}
+.button-wrap {
+  text-align: center;
+  margin-top: 1rem;
+}
+.hidden { display: none; }
+
+/* ————————————————————————————————————
+   OPTIONAL PULSE ANIMATION
+   ———————————————————————————————————— */
+@keyframes pulse {
+  0%,100% { box-shadow: 0 0 0px var(--highlight); }
+  50%     { box-shadow: 0 0 8px var(--highlight); }
+}
+.pulsing {
+  animation: pulse 1.6s infinite ease-in-out;
 }
