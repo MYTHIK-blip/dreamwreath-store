@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>📜 How to Use — Dreamwreath</title>
+  <title>📜 Usage Tips — Dreamwreath</title>
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -24,15 +24,138 @@
     </nav>
 
     <main class="container">
+      <!-- Introduction -->
       <section>
-        <h2>Deployment Pipeline</h2>
+        <h2>Introduction</h2>
+        <p>Welcome, scrollwalker. This guide teaches you how to wield your Dreamwreath kits—whether you’re firing off GPT prompts, spinning up VORPALIS agents, or weaving your civic‐tech scaffold.</p>
+        <p>Follow the steps below to transform static ZIPs into living, breathing pipelines of insight.</p>
+      </section>
+
+      <!-- Quick Start -->
+      <section>
+        <h2>Quick Start</h2>
         <ol>
-          <li><strong>Prototype Fast:</strong> Paste prompts into ChatGPT/Gemini to generate code.</li>
-          <li><strong>Agent Integration:</strong> Plug prompts into Ollama or AutoGen pipelines.</li>
-          <li><strong>Library Build:</strong> Archive outputs in Notion, Obsidian, or GitHub.</li>
-          <li><strong>Demo Series:</strong> Create short video walkthroughs on YouTube or socials.</li>
-          <li><strong>CI/CD Embed:</strong> Automate prompt execution in GitHub Actions or local scripts.</li>
+          <li><strong>Download your kit:</strong>  
+            <code>curl -O https://dreamwreath-store.pages.dev/GOOGSTAK100.zip</code>
+          </li>
+          <li><strong>Unpack & inspect:</strong>  
+            <code>unzip GOOGSTAK100.zip -d scroll_products/</code>
+          </li>
+          <li><strong>Load into your LLM:</strong>  
+            Paste a prompt from <code>scroll_products/prompts.yaml</code> into ChatGPT or Gemini.
+          </li>
+          <li><strong>Execute pipeline:</strong>  
+            Run the bootstrap script:  
+            <code>bash scroll_products/bootstrap.sh</code>
+          </li>
+          <li><strong>Review logs:</strong>  
+            Check <code>scroll_products/logs/</code> for output and errors.
+          </li>
         </ol>
+      </section>
+
+      <!-- Best Practices -->
+      <section>
+        <h2>Best Practices</h2>
+        <ul>
+          <li>🔒 <strong>Isolate environments:</strong> Docker or Python venv for clean dependencies.</li>
+          <li>💾 <strong>Version control:</strong> Commit <code>README.md</code> & <code>prompts.yaml</code> tags to Git.</li>
+          <li>🛡️ <strong>Secure secrets:</strong> Use environment variables or Workers KV for keys.</li>
+          <li>🗂️ <strong>Metadata:</strong> Add `scroll_id` and `version` in your JSON outputs.</li>
+          <li>⚡ <strong>Parallel runs:</strong> Spin up multiple agents for load testing.</li>
+        </ul>
+      </section>
+
+      <!-- Automation & CI/CD -->
+      <section>
+        <h2>Automation & CI/CD</h2>
+        <p>Embed scrollkits in your pipeline with GitHub Actions:</p>
+        <pre><code>
+# .github/workflows/scrollkit.yml
+on: [push, workflow_dispatch]
+jobs:
+  test-scroll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      - name: Install deps
+        run: pip install -r requirements.txt
+      - name: Smoke tests
+        run: python tests/smoke_test.py
+        env:
+          GUMROAD_TOKEN: ${{ secrets.GUMROAD_TOKEN }}
+        </code></pre>
+        <p>Use Cloudflare Workers for dynamic Gumroad price checks or webhook triggers.</p>
+      </section>
+
+      <!-- Troubleshooting -->
+      <section>
+        <h2>Troubleshooting</h2>
+        <dl>
+          <dt><strong>“Font not found”</strong></dt>
+          <dd>Ensure your CSS imports <code>'Press Start 2P'</code> correctly.</dd>
+
+          <dt><strong>Agents hang on boot</strong></dt>
+          <dd>Verify Docker daemon is running and Ollama is reachable.</dd>
+
+          <dt><strong>404 on assets</strong></dt>
+          <dd>Double-check file paths under <code>/assets/</code> and CNAME config in Cloudflare.</dd>
+
+          <dt><strong>Build fails</strong></dt>
+          <dd>Inspect Cloudflare Pages build log and confirm your build instructions are set to “None” if static.</dd>
+        </dl>
+      </section>
+
+      <!-- Advanced Tips -->
+      <section>
+        <h2>Advanced Tips</h2>
+        <p>Drive dynamic pricing or user gating with Cloudflare Workers KV:</p>
+        <pre><code>
+addEventListener('fetch', event => {
+  event.respondWith(handle(event.request))
+})
+
+async function handle(req) {
+  const price = await MY_KV.get('GOOGSTAK100_PRICE')
+  return new Response(`Current price: ${price}`)
+}
+</code></pre>
+        <p>Use Workers Secrets Store for API tokens and secure your endpoints.</p>
+      </section>
+
+      <!-- Community & Resources -->
+      <section>
+        <h2>Community & Resources</h2>
+        <ul>
+          <li>🗣️ Discord: <a href="#">Join the Scrollforge</a></li>
+          <li>🐙 GitHub: <a href="https://github.com/MYTHIK-blip" target="_blank">MYTHIK-blip Org</a></li>
+          <li>📚 Docs: <a href="#">Scrollcraft Manual</a></li>
+          <li>🎥 Tutorials: <a href="#">YouTube – Scrollwalker Series</a></li>
+          <li>✉️ Feedback: <a href="mailto:kerehama.mcleod@outlook.com">Email Us</a></li>
+        </ul>
+      </section>
+
+      <!-- FAQs -->
+      <section>
+        <h2>FAQs</h2>
+        <p><strong>Q:</strong> Are these kits free?<br>
+           <strong>A:</strong> GOOGSTAK100 is NZ$5; future kits will be free on launch.</p>
+
+        <p><strong>Q:</strong> Can I redistribute?<br>
+           <strong>A:</strong> Yes—under the Scrollwise license with attribution.</p>
+      </section>
+
+      <!-- Paradox & Pro Tips -->
+      <section>
+        <h2>Paradox & Pro Tips</h2>
+        <p>“When noise reigns, build scrolls in silence.”  
+           <em>— Scrollwalker Proverb</em></p>
+        <p>Trigger creative leaps by asking your LLM for “the least expected answer.”</p>
+        <p>Integrate a breathing ritual: 5 breaths in, 5 breaths out, then commit the prompt.</p>
       </section>
     </main>
 
