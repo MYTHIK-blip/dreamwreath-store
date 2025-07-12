@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  background-color: #0f001d;
+  color: #66ff66;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 12px;
+  line-height: 1.4;
+  image-rendering: pixelated;
+  text-shadow: 0 0 2px #33ff33;
+  min-height: 100vh;
+}
+
+a {
+  color: #ff66cc;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+header, footer, main, nav, section {
+  padding: 1rem;
+}
+
+header {
+  text-align: center;
+  border-bottom: 2px solid #66ff66;
+}
+header h1 {
+  color: #ffae00;
+  font-size: 1.5rem;
+}
+nav {
+  margin-top: 0.5rem;
+}
+nav a {
+  margin: 0 0.4rem;
+}
+
+.cards, .kits-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.card, .kit-card {
+  background: #1a002f;
+  border: 2px solid #66ff66;
+  padding: 1rem;
+  min-width: 160px;
+  text-align: center;
+}
+.card:hover, .kit-card:hover {
+  background: #24003c;
+}
+
+h2, h3 {
+  color: #7fffd4;
+  margin-bottom: 0.5rem;
+}
+
+.button-download {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  background: #00e0ff;
+  color: #000;
+  text-transform: uppercase;
+  border: 2px solid #00e0ff;
+  font-size: 0.75rem;
+}
+
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 2px solid #66ff66;
+  opacity: 0.6;
+}
